@@ -1,3 +1,10 @@
 machine:
  ruby:
   version: 2.4.3
+#checkout:
+#dependencies:
+#database:
+#compile:
+#test:
+#deploy:
+
