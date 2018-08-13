@@ -1,6 +1,16 @@
 machine:
  environment:
-   TEST_CLUSTER_PORT: '9250'
+  TEST_CLUSTER_PORT: '9250'
+dependencies: 
+  cache_directories:
+   - elasticsearch-5.4.0
+  pre:
+   - sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java
+   - sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+   - echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc
+  post:
+    - wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.0.tar.gz
+    - tar -xvf elasticsearch-5.4.0.tar.gz
 #checkout:
 #dependencies:
 #database:
